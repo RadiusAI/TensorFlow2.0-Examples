@@ -5,9 +5,7 @@ import cv2
 import random
 import colorsys
 import numpy as np
-import tensorflow as tf
-from core.config import cfg
-
+from core import fileutils
 
 def load_weights(model, weights_file):
     """
@@ -61,10 +59,12 @@ def read_class_names(class_file_name):
     return names
 
 
-def get_anchors(anchors):
+def get_anchors(data_dir, filename):
     '''loads the anchors from a file'''
-    anchors = np.array(anchors)
-    return anchors.reshape(3, 3, 2)
+    str_value = fileutils.download_file_as_string("{}/{}".format(data_dir, filename))
+    anchors = np.asarray([value.split(",") for value in str_value.split("\t")])
+    anchor_size_per_scale = len(anchors) // 3
+    return anchors.reshape(3, anchor_size_per_scale, 2)
 
 
 def image_preprocess(image, target_size, gt_boxes=None):

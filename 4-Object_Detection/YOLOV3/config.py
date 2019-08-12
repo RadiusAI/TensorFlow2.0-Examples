@@ -52,14 +52,12 @@ TENSORBOARD_DIR = "tb_logs"
 
 """"""""
 # NETWORK TRAIN
-TRAIN_ANNOTATION_DATASET = ["gs://{}/{}".format(GS_BUCKET_NAME, "dataset/beh1")]
-TRAIN_ANNOTATION_PATH = ['beh1_annotation.txt']
+TFRECORD_DATASET = "gs://{}/{}".format(GS_BUCKET_NAME, "dataset/beh1/beh1_images.tfrecords")
+TRAIN_ANNOTATION_PATH = 'beh1_annotation.txt'
 TRAIN_BATCH_SIZE = 8
 TRAIN_INPUT_SIZE = [416]
 TRAIN_CLASSES = "beh.names"
-TRAIN_ANCHORS = [24,34, 46,84, 68,185, # Anchors for small obj
-                   116,286, 122,97, 171,180,  # Anchors for medium obj
-                   214,327, 326,193, 359,359] # Anchors for big obj
+TRAIN_ANCHORS = "anchors.txt"
 TRAIN_ANCHOR_PER_SCALE = 3
 
 # NETWORK CONF
