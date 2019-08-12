@@ -2,7 +2,7 @@
 # coding=utf-8
 
 import os
-import imageutil
+from core import imageutil
 import random
 import numpy as np
 import tensorflow as tf
