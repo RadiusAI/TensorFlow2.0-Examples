@@ -2,13 +2,12 @@
 # coding=utf-8
 
 import os
-from core import imageutil
+from core import imageutil, fileutils
 import random
 import numpy as np
 import tensorflow as tf
 import core.utils as utils
 import config as cfg
-import fileutils
 from collections import defaultdict
 
 

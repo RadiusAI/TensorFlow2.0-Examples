@@ -4,7 +4,6 @@ from google.cloud import storage
 import config as cfg
 import boto3
 import os
-from util import image as image_util
 
 # S3 Credentials
 s3 = boto3.resource('s3')
