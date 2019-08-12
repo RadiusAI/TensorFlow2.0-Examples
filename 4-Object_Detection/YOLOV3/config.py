@@ -3,7 +3,7 @@ import os
 
 # REMOTE ENVIRONMENT
 # GOOGLE_CLOUD_SERVICE_ACCOUNT_KEY_PATH = "/home/jovyan/radius-retail.json"
-GOOGLE_CLOUD_SERVICE_ACCOUNT_KEY_PATH = "radius-retail.json"
+GOOGLE_CLOUD_SERVICE_ACCOUNT_KEY_PATH = "/tf/radius-retail.json"
 os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = GOOGLE_CLOUD_SERVICE_ACCOUNT_KEY_PATH
 GS_BUCKET_NAME = "radius-retail-data-science-model"
 S3_BUCKET_NAME = "radiusiot-videos"
