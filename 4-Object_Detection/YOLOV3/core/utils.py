@@ -6,6 +6,8 @@ import random
 import colorsys
 import numpy as np
 from core import fileutils
+import config as cfg
+
 
 def load_weights(model, weights_file):
     """
@@ -59,9 +61,9 @@ def read_class_names(class_file_name):
     return names
 
 
-def get_anchors(data_dir, filename):
+def get_anchors(filename):
     '''loads the anchors from a file'''
-    str_value = fileutils.download_file_as_string("{}/{}".format(data_dir, filename))
+    str_value = fileutils.download_file_as_string("{}/{}".format(cfg.DATA_DIR, filename))
     anchors = np.asarray([value.split(",") for value in str_value.split("\t")])
     anchor_size_per_scale = len(anchors) // 3
     return anchors.reshape(3, anchor_size_per_scale, 2)

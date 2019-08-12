@@ -52,7 +52,8 @@ TENSORBOARD_DIR = "tb_logs"
 
 """"""""
 # NETWORK TRAIN
-TFRECORD_DATASET = "gs://{}/{}".format(GS_BUCKET_NAME, "dataset/beh1/beh1_images.tfrecords")
+DATA_DIR = "gs://" + GS_BUCKET_NAME
+TFRECORD_DATASET = "dataset/beh1/beh1_images.tfrecords"
 TRAIN_ANNOTATION_PATH = 'beh1_annotation.txt'
 TRAIN_BATCH_SIZE = 8
 TRAIN_INPUT_SIZE = [416]
