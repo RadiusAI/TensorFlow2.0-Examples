@@ -1,15 +1,5 @@
 #! /usr/bin/env python
 # coding=utf-8
-#================================================================
-#   Copyright (C) 2019 * Ltd. All rights reserved.
-#
-#   Editor      : VIM
-#   File name   : train.py
-#   Author      : YunYang1994
-#   Created date: 2019-07-18 09:18:54
-#   Description :
-#
-#================================================================
 
 import os
 import time
@@ -42,6 +32,7 @@ model = tf.keras.Model(input_tensor, output_tensors)
 optimizer = tf.keras.optimizers.Adam()
 if os.path.exists(logdir): shutil.rmtree(logdir)
 writer = tf.summary.create_file_writer(logdir)
+
 
 def train_step(image_data, target):
     with tf.GradientTape() as tape:

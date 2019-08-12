@@ -1,15 +1,5 @@
 #! /usr/bin/env python
 # coding=utf-8
-#================================================================
-#   Copyright (C) 2019 * Ltd. All rights reserved.
-#
-#   Editor      : VIM
-#   File name   : test.py
-#   Author      : YunYang1994
-#   Created date: 2019-07-19 10:29:34
-#   Description :
-#
-#================================================================
 
 import cv2
 import os
@@ -77,7 +67,7 @@ with open(cfg.TEST.ANNOT_PATH, 'r') as annotation_file:
         predict_result_path = os.path.join(predicted_dir_path, str(num) + '.txt')
         # Predict Process
         image_size = image.shape[:2]
-        image_data = utils.image_preporcess(np.copy(image), [INPUT_SIZE, INPUT_SIZE])
+        image_data = utils.image_preprocess(np.copy(image), [INPUT_SIZE, INPUT_SIZE])
         image_data = image_data[np.newaxis, ...].astype(np.float32)
 
         pred_bbox = model.predict(image_data)

@@ -1,15 +1,5 @@
 #! /usr/bin/env python
 # coding=utf-8
-#================================================================
-#   Copyright (C) 2019 * Ltd. All rights reserved.
-#
-#   Editor      : VIM
-#   File name   : utils.py
-#   Author      : YunYang1994
-#   Created date: 2019-07-12 01:33:38
-#   Description :
-#
-#================================================================
 
 import cv2
 import random
@@ -17,6 +7,7 @@ import colorsys
 import numpy as np
 import tensorflow as tf
 from core.config import cfg
+
 
 def load_weights(model, weights_file):
     """
@@ -70,15 +61,13 @@ def read_class_names(class_file_name):
     return names
 
 
-def get_anchors(anchors_path):
+def get_anchors(anchors):
     '''loads the anchors from a file'''
-    with open(anchors_path) as f:
-        anchors = f.readline()
-    anchors = np.array(anchors.split(','), dtype=np.float32)
+    anchors = np.array(anchors)
     return anchors.reshape(3, 3, 2)
 
 
-def image_preporcess(image, target_size, gt_boxes=None):
+def image_preprocess(image, target_size, gt_boxes=None):
 
     ih, iw    = target_size
     h,  w, _  = image.shape
